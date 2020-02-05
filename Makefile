@@ -1,4 +1,4 @@
-default: build
+default: test
 
 build:
 	go build github.com/dkinzer/go-linode-ip/cmd/linode-ip
