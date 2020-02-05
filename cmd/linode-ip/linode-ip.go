@@ -23,7 +23,7 @@ type App struct {
 	exit            bool
 }
 
-func LinodesList() []Linode {
+func linodesList() []Linode {
 	cmd := exec.Command("linode-cli", "--json", "linodes", "list")
 	jsonBlob, err := cmd.Output()
 
@@ -42,7 +42,7 @@ func LinodesList() []Linode {
 	return linodes
 }
 
-func (app *App) MatchLinodes(name string) {
+func (app *App) matchLiondes(name string) {
 	app.matchingLinodes = nil
 
 	for _, linode := range app.Linodes {
@@ -89,7 +89,7 @@ func (app App) PrintChooseALinode() {
 
 func Fetch(name string, linodes ...Linode) string {
 	if len(linodes) == 0 {
-		linodes = LinodesList()
+		linodes = linodesList()
 	}
 
 	app := App{
@@ -98,7 +98,7 @@ func Fetch(name string, linodes ...Linode) string {
 		chosenLinode:    0,
 	}
 
-	app.MatchLinodes(name)
+	app.matchLiondes(name)
 
 	for {
 		if len(app.matchingLinodes) > 1 {
@@ -123,7 +123,7 @@ func Fetch(name string, linodes ...Linode) string {
 
 				name, err = reader.ReadString('\n')
 				name = strings.TrimSuffix(name, "\n")
-				app.MatchLinodes(name)
+				app.matchLiondes(name)
 
 				continue
 			}
