@@ -1,4 +1,5 @@
-#go-linonde-ip
+# go-linonde-ip
+[![Build Status](https://travis-ci.com/dkinzer/go-linode-ip.svg?branch=master)](https://travis-ci.com/dkinzer/go-linode-ip.svg?branch=master)
 
 This package adds the linode-ip executable that takes a match string and returns
 the ipv4 address of a linode whose label matches the string.  If there is more
@@ -23,9 +24,8 @@ linode-ip traefik
 
 Returns the ip address of the linode labeled  traefik.
 
-Note that the matching string can be a regex.
-
-If more than one match is found, then a session is opened allowing the user to choose between possible matches.
+If more than one match is found, then a session is opened allowing the user to
+choose between possible matches.
 
 ```
 > linode-ip qa
