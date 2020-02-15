@@ -1,5 +1,5 @@
 # go-linonde-ip
-[![Build Status](https://travis-ci.com/dkinzer/go-linode-ip.svg?branch=master)](https://travis-ci.com/dkinzer/go-linode-ip.svg?branch=master)
+![Go](https://github.com/dkinzer/go-linode-ip/workflows/Go/badge.svg)
 
 This package adds the linode-ip executable that takes a match string and returns
 the ipv4 address of a linode whose label matches the string.  If there is more

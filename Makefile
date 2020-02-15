@@ -1,7 +1,10 @@
 default: test
 
 build:
-	go build github.com/dkinzer/go-linode-ip/cmd/linode-ip
+	go build -v ./...
+
+lint:
+	go vet ./... -v
 
 test:
-	go test -v github.com/dkinzer/go-linode-ip/cmd/linode-ip
+	go test ./... -v
