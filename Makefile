@@ -4,7 +4,7 @@ build:
 	go build -v ./...
 
 lint:
-	go vet ./... -v
+	go vet ./...
 
 test:
 	go test ./... -v
